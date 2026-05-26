@@ -1,2 +1,15 @@
-# iot-vehicle-monitoring-device
-IoT Thesis 2026 B.Tuguldur
+# IoT-based Vehicle Location and Monitoring device
+
+Энэхүү төсөл нь ESP32-S3 микроконтроллер болон Air780E 4G LTE модуль, 
+TinyGPS++ ашиглан автомашины бодит байршил болон CAN Bus (OBD2)-ийн 
+өгөгдлийг секунд тутамд цуглуулах захын төхөөрөмж (Edge device)-ийн эх код юм.
+
+## ✨ Үндсэн давуу талууд:
+* **FreeRTOS Олон урсгалт бүтэц:** Процессорын хоёр цөмийг зэрэг ашиглаж (Dual-Core), GPS болон 4G холболтыг гацалтгүй шийдсэн.
+* **Fault-Tolerance (Уналтын менежмент):** Сүлжээ тасрах үед датаг **LittleFS** дотоод Flash санах ойд түр буферлэж, сүлжээ сэргэхэд AWS InfluxDB рүү нөхөж илгээдэг.
+* **Хөнгөн протокол:** InfluxDB-ийн Line Protocol болон HTTP REST API ашиглан датаг маш бага зардлаар шиддэг.
+
+## 🛠️ Техник хангамжийн бүтэц:
+* MCU: ESP32-S3
+* 4G LTE: Air780E
+* CAN Transceiver: TCAN334
